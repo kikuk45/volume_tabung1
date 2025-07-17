@@ -22,20 +22,6 @@ st.write("Aplikasi sederhana untuk menghitung volume tabung.")
 # Input dari pengguna
 st.header("Masukkan Dimensi Tabung")
 
-# Pilihan nilai Pi
-pi_option = st.radio(
-    "Pilih nilai Pi yang akan digunakan:",
-    ("22/7", "3.14")
-)
-
-# Menentukan nilai pi berdasarkan pilihan pengguna
-if pi_option == "22/7":
-    PI_VALUE = 22 / 7
-    pi_description = "($\pi = 22/7$)"
-else:
-    PI_VALUE = 3.14
-    pi_description = "($\pi = 3.14$)"
-
 jari_jari_input = st.number_input("Masukkan jari-jari tabung (cm):", min_value=0.0, value=7.0)
 tinggi_input = st.number_input("Masukkan tinggi tabung (cm):", min_value=0.0, value=10.0)
 
@@ -44,6 +30,14 @@ if st.button("Hitung Volume"):
   if jari_jari_input <= 0 or tinggi_input <= 0:
     st.error("Jari-jari dan tinggi harus lebih besar dari nol.")
   else:
+    # Logika untuk memilih nilai Pi
+    if jari_jari_input % 7 == 0: # Memeriksa apakah jari-jari adalah kelipatan 7
+      PI_VALUE = 22 / 7
+      pi_description = "($\pi = 22/7$)"
+    else:
+      PI_VALUE = 3.14
+      pi_description = "($\pi = 3.14$)"
+
     volume_hasil = hitung_volume_tabung(jari_jari_input, tinggi_input, PI_VALUE)
     st.success(f"Volume tabung adalah: **{volume_hasil:.2f} cm³**")
     st.write(f"Perhitungan ini menggunakan nilai Pi {pi_description}.") # Keterangan Pi yang digunakan
