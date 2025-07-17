@@ -17,7 +17,7 @@ def hitung_volume_tabung(jari_jari, tinggi, pi_value_to_use):
   return volume
 
 st.title("Kalkulator Volume Tabung")
-st.write("Hai, ini adalah aplikasi sederhana untuk menghitung volume tabung.")
+st.write("Hai😄👋🏽, ini adalah aplikasi sederhana untuk menghitung volume tabung.")
 
 # Input dari pengguna
 st.header("Masukkan Jari- Jari dan Tinggi Tabung")
