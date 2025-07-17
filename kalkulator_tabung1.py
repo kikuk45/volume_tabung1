@@ -17,10 +17,10 @@ def hitung_volume_tabung(jari_jari, tinggi, pi_value_to_use):
   return volume
 
 st.title("Kalkulator Volume Tabung")
-st.write("Hai😄👋🏽, ini adalah aplikasi sederhana untuk menghitung volume tabung.")
+st.write("Hai👋🏽😄, ini adalah aplikasi sederhana untuk menghitung volume tabung.")
 
 # Input dari pengguna
-st.header("Masukkan Jari- Jari dan Tinggi Tabung")
+st.header("Masukkan Jari-Jari dan Tinggi Tabung")
 
 jari_jari_input = st.number_input("Masukkan jari-jari tabung (cm):", min_value=0.0, value=7.0)
 tinggi_input = st.number_input("Masukkan tinggi tabung (cm):", min_value=0.0, value=10.0)
@@ -39,6 +39,7 @@ if st.button("Hitung Volume"):
       pi_description = "($\pi = 3.14$)"
 
     volume_hasil = hitung_volume_tabung(jari_jari_input, tinggi_input, PI_VALUE)
-    st.success(f"Jadi, volume tabung adalah: **{volume_hasil:.2f} cm³**")
-    st.write(f"Perhitungan ini menggunakan nilai Pi {pi_description}.") # Keterangan Pi yang digunakan
+    st.success(f"Jadi, untuk volume tabung adalah: **{volume_hasil:.2f} cm³**")
+    st.write(f"Dari perhitungan ini menggunakan nilai Pi {pi_description}.") # Keterangan Pi yang digunakan
+    st.write("Berikut adalah tautan untuk lembar kerja siswa: [Lembar Kerja Siswa](https://drive.google.com/drive/folders/1CLJ5FM-XH4hBEcKo7XJIKvFhaotmRHnH)")
     st.balloons() # Efek balon setelah perhitungan
